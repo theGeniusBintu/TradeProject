@@ -2,19 +2,19 @@ abstract class Trade(val id: Integer, val symbol: String, val quantity: Integer,
 
   def isExecutable() : Boolean
 
-  override def toString = s"Trade($id, $symbol, $quantity, $price)"
+  override def toString = s"${getClass.getName} ($id, $symbol, $quantity, $price)"
 
-  if (isExecutable() == true)
-    println("An equity trade")
-  else
-    println("An FX trade")
+// def equity() : String =  if (isExecutable() == true)
+//              return "Equity"
+//  def fx() : String = if (isExecutable()==false)
+//              return "FX"
 
 
 // val p = new Trade(1,"AAPL", 2, 1)
-  def price = value()
-  def positive_prices (value : Double) : Double= {
+
+  def positive_prices (value : Double)= {
    if (value >=0)
-        price = value : Double
+        price = value
  }
 
   def value () : Double = {quantity * price}
